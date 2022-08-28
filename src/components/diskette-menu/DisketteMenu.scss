@@ -1,0 +1,27 @@
+@import "../../varibles.style.scss";
+
+.DisketteMenu {
+  display: flex;
+  position: absolute;
+  bottom: $centerTable;
+  left: 100px;
+  width: 220px;
+  height: 300px;
+  // background-color: #00000091;
+
+  .Diskette {
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+  }
+
+  @for $i from 1 through 10 {
+    .Diskette:nth-last-child(#{$i + 1}) {
+      margin-bottom: $i * 30px;
+      // background-color: rgb(random(255), random(255), random(255));
+    }
+  }
+
+  .Diskette:not(:last-child):hover {
+    transform: translateY(-20px);
+  }
+}
