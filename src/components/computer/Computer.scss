@@ -1,4 +1,25 @@
 @import "../../varibles.style.scss";
+
+.fullScreen {
+  top: 0;
+  bottom: unset !important;
+  font-size: 25px !important;
+  .header {
+    font-size: 30px !important;
+  }
+  .monitor {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+  .comp-controls {
+    display: none !important;
+  }
+  main section {
+    font-size: 40px !important;
+    line-height: 30px !important;
+  }
+}
+
 .computer {
   display: flex;
   position: absolute;
@@ -6,7 +27,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: lcdSolid;
+  //font-family: lcdSolid;
+  font-family: Sevastopol-Interface;
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  color: #fff;
   z-index: 100;
 
   .monitor {
@@ -44,11 +70,9 @@
     // background-image: url("../../../public/img/bg-computer.jpg");
     //background-color: #459c84;
     background-color: #051706;
-
-    font-size: 20px;
     // color: #1bba44;
-    color: #fff;
-    border-radius: 10%;
+
+    border-radius: 30px;
     //  box-shadow: 0px 0px 5px 6px rgba(34, 60, 80, 0.33);
     box-shadow: 0px 0px 15px 20px rgba(34, 60, 80, 0.33) inset;
 

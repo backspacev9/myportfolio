@@ -4,6 +4,12 @@
   font-family: lcdSolid;
   src: url(./../public/fonts/LcdSolid-VPzB.ttf);
 }
+@font-face {
+  font-family: Sevastopol-Interface;
+  src: url(./../public/fonts/Sevastopol-Interface.ttf);
+  line-height: 20px;
+  letter-spacing: 2px;
+}
 
 * {
   margin: 0;
@@ -34,7 +40,6 @@ section {
   display: flex;
   justify-content: center;
   height: $tableHeight;
-  position: relative;
   width: 100%;
   background-color: #c19c67;
   z-index: 1;

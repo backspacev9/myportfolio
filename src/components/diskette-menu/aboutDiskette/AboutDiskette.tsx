@@ -12,48 +12,35 @@ const defaultState = {
   projects: "",
   contacts: "",
 };
-const defaultStateOffSets = {
-  about: 0,
-  skills: 0,
-  projects: 0,
-  contacts: 0,
-};
 
-const AboutDiskette = () => {
+interface aboutDisketteProps {
+  isFullScreen: boolean;
+}
+
+const AboutDiskette = (props: aboutDisketteProps) => {
   const {about, skills, projects, contacts} = nameMenus;
-  const canvasRef: React.RefObject<HTMLCanvasElement> = React.createRef();
-  const headerRef: React.RefObject<HTMLDivElement> = React.createRef();
-  const tab1MenuRef: React.RefObject<HTMLLIElement> = React.createRef();
-  const tab2MenuRef: React.RefObject<HTMLLIElement> = React.createRef();
-  const tab3MenuRef: React.RefObject<HTMLLIElement> = React.createRef();
-  const tab4MenuRef: React.RefObject<HTMLLIElement> = React.createRef();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const tab1MenuRef = useRef<HTMLLIElement>(null);
+  const tab2MenuRef = useRef<HTMLLIElement>(null);
+  const tab3MenuRef = useRef<HTMLLIElement>(null);
+  const tab4MenuRef = useRef<HTMLLIElement>(null);
 
-  const tab1Y = tab1MenuRef.current?.offsetTop;
-  const tab2Y = tab2MenuRef.current?.offsetTop;
-  const tab3Y = tab3MenuRef.current?.offsetTop;
-  const tab4Y = tab4MenuRef.current?.offsetTop;
   const [activeTC, setActiveTC] = useState(defaultState);
   const [activeTab, setActiveTab] = useState(defaultState);
-  const [offSets, setOffSets] = useState(defaultStateOffSets);
-  const [activeTabConvas, setActiveTabConvas] = useState(0);
+  const [activeTabConvas, setActiveTabConvas] = useState<HTMLLIElement>();
   const [header, setHeader] = useState("");
 
   useEffect(() => {
-    const tab1Y = tab1MenuRef.current?.offsetTop;
-    const tab2Y = tab2MenuRef.current?.offsetTop;
-    const tab3Y = tab3MenuRef.current?.offsetTop;
-    const tab4Y = tab4MenuRef.current?.offsetTop;
-    setOffSets({...offSets, about: tab1Y!, skills: tab2Y!, projects: tab3Y!, contacts: tab4Y!});
-    setActiveTabConvas(tab1Y!);
+    setActiveTabConvas(tab1MenuRef.current!);
     setActiveTC({...defaultState, about: "activeTC"});
     setActiveTab({...defaultState, about: "activeTab"});
-
     setHeader(about);
   }, []);
 
   useEffect(() => {
     drowMenuLine();
-  }, [activeTabConvas]);
+  }, [activeTabConvas, props.isFullScreen]);
 
   const drowMenuLine = () => {
     const convEl = canvasRef.current;
@@ -71,8 +58,8 @@ const AboutDiskette = () => {
       ctx.moveTo(canvasWidth!, headerY!);
       ctx.lineTo(canvasWidth! / 2, headerY!);
 
-      ctx.lineTo(canvasWidth! / 2, activeTabConvas);
-      ctx.lineTo(0, activeTabConvas);
+      ctx.lineTo(canvasWidth! / 2, activeTabConvas?.offsetTop!);
+      ctx.lineTo(0, activeTabConvas?.offsetTop!);
 
       ctx.strokeStyle = "#fff";
       ctx.lineWidth = 2;
@@ -85,26 +72,26 @@ const AboutDiskette = () => {
       case about:
         setActiveTC({...defaultState, about: "activeTC"});
         setActiveTab({...defaultState, about: "activeTab"});
-        setActiveTabConvas(offSets.about);
+        setActiveTabConvas(tab1MenuRef.current!);
         setHeader(about);
         break;
       case skills:
         setActiveTC({...defaultState, skills: "activeTC"});
         setActiveTab({...defaultState, skills: "activeTab"});
-        setActiveTabConvas(offSets.skills);
+        setActiveTabConvas(tab2MenuRef.current!);
         setHeader(skills);
         break;
       case projects:
         setActiveTC({...defaultState, projects: "activeTC"});
         setActiveTab({...defaultState, projects: "activeTab"});
-        setActiveTabConvas(offSets.projects);
+        setActiveTabConvas(tab3MenuRef.current!);
         setHeader(projects);
 
         break;
       case contacts:
         setActiveTC({...defaultState, contacts: "activeTC"});
         setActiveTab({...defaultState, contacts: "activeTab"});
-        setActiveTabConvas(offSets.contacts);
+        setActiveTabConvas(tab4MenuRef.current!);
         setHeader(contacts);
         break;
     }
@@ -154,9 +141,19 @@ const AboutDiskette = () => {
           {header}
         </div>
         <section>
-          <div className={`tabContent tc-about ${activeTC.about}`}>&#62;1111111111111</div>
-          <div className={`tabContent tc-skills ${activeTC.skills}`}>&#62;2222222222222</div>
-          <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;333333333333</div>
+          <div className={`tabContent tc-about ${activeTC.about}`}>
+            <span> Hello, I'm Kalendo Alexander</span>
+            <span> &#62;Profile</span>
+            <p>
+              I'm Front-End Developer with entry-level experience specializing in web development,
+              user interface design, HTML, and RactJS. Adept at identifying opportunities to enhance
+              front-end design and improve the user experience.
+            </p>
+          </div>
+          <div className={`tabContent tc-skills ${activeTC.skills}`}>
+            &#62; <p></p>
+          </div>
+          <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div>
           <div className={`tabContent tc-contacts ${activeTC.contacts}`}>&#62;44444444444</div>
         </section>
       </main>

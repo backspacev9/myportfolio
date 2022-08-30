@@ -3,13 +3,21 @@ import "../../";
 import Browser from "../browser/Browser";
 
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
+import {useState} from "react";
 const Computer = () => {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const fullScreen = () => {
+    setIsFullScreen(!isFullScreen);
+    console.log("click");
+  };
+
   return (
-    <div className="computer">
+    <div className={`computer ${isFullScreen ? "fullScreen" : ""}`}>
       <div className="monitor">
         <div className="m-main">
           <div className="m-glass">
-            <AboutDiskette />
+            <AboutDiskette isFullScreen={isFullScreen} />
             {/* Wake up neo
             <br />
             The matrix has you
@@ -27,7 +35,7 @@ const Computer = () => {
             <span className="btn-pickoff"></span>
           </div>
         </div>
-        <span className="btn-onOff"></span>
+        <span className="btn-onOff" onClick={() => fullScreen()}></span>
       </div>
       {/* <img className="comp_foot" src="./img/monitor_foot.svg" alt="" /> */}
     </div>
