@@ -1,25 +1,5 @@
 @import "../../varibles.style.scss";
 
-.fullScreen {
-  top: 0;
-  bottom: unset !important;
-  font-size: 25px !important;
-  .header {
-    font-size: 30px !important;
-  }
-  .monitor {
-    width: 100vw !important;
-    height: 100vh !important;
-  }
-  .comp-controls {
-    display: none !important;
-  }
-  main section {
-    font-size: 40px !important;
-    line-height: 30px !important;
-  }
-}
-
 .computer {
   display: flex;
   position: absolute;
@@ -53,7 +33,6 @@
     height: 100%;
     width: 100%;
     height: 100%;
-    // background-image: url("../../../public/img/bg-computer.jpg");
     background-color: #434342;
     padding: 10px 20px;
     border-radius: 30px;
@@ -63,18 +42,54 @@
   .m-glass {
     display: flex;
     position: relative;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     height: 100%;
-    padding: 25px;
-    // background-image: url("../../../public/img/bg-computer.jpg");
-    //background-color: #459c84;
+    padding: 15px 25px 25px 25px;
     background-color: #051706;
-    // color: #1bba44;
-
     border-radius: 30px;
-    //  box-shadow: 0px 0px 5px 6px rgba(34, 60, 80, 0.33);
     box-shadow: 0px 0px 15px 20px rgba(34, 60, 80, 0.33) inset;
+
+    .control-header {
+      display: flex;
+      padding: 2px 2px;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 25px;
+      background-color: #04a862;
+
+      .btn-minimize {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        background-color: #05441b;
+        cursor: pointer;
+        span {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          width: 2px;
+          height: 100%;
+        }
+        span:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+      .btn-minimize:hover {
+        background-color: #fff;
+        .stroke {
+          background-color: #04a862;
+        }
+      }
+    }
 
     .container {
       width: 100%;
@@ -82,7 +97,35 @@
     }
   }
 }
+.fullScreen {
+  top: 0;
+  bottom: unset;
+  font-size: 25px;
+  .monitor {
+    width: 100vw;
+    height: 100vh;
+    .m-glass {
+      .control-header .btn-minimize {
+        .stroke {
+          display: flex;
+        }
+      }
+      .header {
+        font-size: 30px;
+      }
 
+      main section {
+        font-size: 40px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .comp-controls {
+    display: none;
+  }
+}
+//----------------------------
 .comp-controls {
   display: flex;
   justify-content: space-between;

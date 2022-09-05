@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./AboutDiskette.scss";
 const nameMenus = {
-  about: "about",
+  about: "about me",
   skills: "skills",
   projects: "projects",
   contacts: "contacts",
@@ -107,7 +107,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             className={activeTab.about}
             onClick={() => handleSelectMenu(about)}
           >
-            about
+            {about}
           </li>
           <li
             tabIndex={2}
@@ -115,7 +115,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             className={activeTab.skills}
             onClick={() => handleSelectMenu(skills)}
           >
-            skills
+            {skills}
           </li>
           <li
             tabIndex={3}
@@ -123,7 +123,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             className={activeTab.projects}
             onClick={() => handleSelectMenu(projects)}
           >
-            projects
+            {projects}
           </li>
           <li
             tabIndex={4}
@@ -131,7 +131,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             className={activeTab.contacts}
             onClick={() => handleSelectMenu(contacts)}
           >
-            contacts
+            {contacts}
           </li>
         </nav>
       </aside>

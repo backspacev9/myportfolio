@@ -17,12 +17,13 @@ const Computer = () => {
       <div className="monitor">
         <div className="m-main">
           <div className="m-glass">
+            <header className="control-header">
+              <span className="btn-minimize" onClick={() => fullScreen()}>
+                <span className="stroke"></span>
+                <span className="stroke"></span>
+              </span>
+            </header>
             <AboutDiskette isFullScreen={isFullScreen} />
-            {/* Wake up neo
-            <br />
-            The matrix has you
-            <br />
-            Follow the white rabbit */}
           </div>
           {/* <Browser /> */}
         </div>
@@ -35,7 +36,7 @@ const Computer = () => {
             <span className="btn-pickoff"></span>
           </div>
         </div>
-        <span className="btn-onOff" onClick={() => fullScreen()}></span>
+        <span className="btn-onOff"></span>
       </div>
       {/* <img className="comp_foot" src="./img/monitor_foot.svg" alt="" /> */}
     </div>
