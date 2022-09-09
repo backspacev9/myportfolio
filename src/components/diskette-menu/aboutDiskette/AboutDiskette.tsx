@@ -140,22 +140,70 @@ const AboutDiskette = (props: aboutDisketteProps) => {
         <div className="header" ref={headerRef}>
           {header}
         </div>
-        <section>
+        <div className="mainContainer">
           <div className={`tabContent tc-about ${activeTC.about}`}>
             <span> Hello, I'm Kalendo Alexander</span>
-            <span> &#62;Profile</span>
-            <p>
-              I'm Front-End Developer with entry-level experience specializing in web development,
-              user interface design, HTML, and RactJS. Adept at identifying opportunities to enhance
-              front-end design and improve the user experience.
-            </p>
+            <section>
+              <span className="sectionName"> &#62;Profile</span>
+              <p>
+                I'm Front-End Developer with entry-level experience specializing in web development,
+                user interface design, HTML, and RactJS. Adept at identifying opportunities to
+                enhance front-end design and improve the user experience.
+              </p>
+            </section>
+            <section>
+              <span className="sectionName"> &#62;Work Experience</span>
+              <div className="experience">
+                <div className="exp-header">
+                  <div className="dateAndPosition">
+                    <div className="exp-date">09/2015 - 01/2018</div>
+                    <span>Styding</span>
+                  </div>
+                  <span className="place">Vitebsk College of Technology</span>
+                </div>
+                <p>
+                  I graduated from college with a degree in programming, where I got some skills in
+                  c# .net, sql, js and java. For my graduation project I wrote a small application
+                  for android that allows you to listen and share music between devices via
+                  wifi-direct technology.
+                </p>
+              </div>
+              <div className="experience">
+                <div className="exp-header">
+                  <div className="dateAndPosition">
+                    <div className="exp-date">02/2020 - Now</div>
+                    <span>System Administrator</span>
+                  </div>
+                  <span className="place">Vitebsk College of Technology</span>
+                </div>
+                <p>
+                  <li># Work in an educational institution.</li>
+                  <li># Managed network connectivity and network security.</li>
+                  <li>
+                    # Responsible for the support of the internal network and the work of all
+                    computers (~250).
+                  </li>
+                  <li># Wrote several internal software on c# .net.</li>
+                </p>
+              </div>
+              <div className="experience">
+                <div className="exp-header">
+                  <div className="dateAndPosition">
+                    <div className="exp-date">03/2021 - 08/2021</div>
+                    <span> JavaScript/Front-End Courses</span>
+                  </div>
+                  <span className="place">Rolling Scopes School</span>
+                </div>
+                <p></p>
+              </div>
+            </section>
           </div>
           <div className={`tabContent tc-skills ${activeTC.skills}`}>
             &#62; <p></p>
           </div>
           <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div>
           <div className={`tabContent tc-contacts ${activeTC.contacts}`}>&#62;44444444444</div>
-        </section>
+        </div>
       </main>
     </div>
   );

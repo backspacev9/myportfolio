@@ -12,7 +12,7 @@
     text-transform: uppercase;
   }
   .header,
-  section {
+  .mainContainer {
     padding: 10px;
   }
 
@@ -54,14 +54,14 @@
       border: 2px solid #fff;
     }
 
-    section {
+    .mainContainer {
       flex-direction: column;
       height: 100%;
       margin-top: 10px;
       border: 2px solid #077d0c;
       border-top: 10px solid #04ab63;
       font-size: 22px;
-
+      text-align: justify;
       overflow-y: auto;
 
       .tabContent {
@@ -69,6 +69,51 @@
         flex-direction: column;
         height: 100%;
         gap: 10px;
+
+        section {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 15px;
+          .sectionName {
+            background-color: #04ab63;
+            padding: 0 5px;
+          }
+        }
+
+        .experience {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          li {
+            list-style: none;
+          }
+          .exp-header {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border: 2px dashed #fff;
+            gap: 10px;
+            .dateAndPosition {
+              display: flex;
+              gap: 20px;
+            }
+            .place {
+              font-size: 26px;
+            }
+          }
+          .exp-date {
+            width: fit-content;
+            font-size: 15px;
+            text-align: center;
+          }
+          .exp-main {
+            p {
+              margin-top: 10px;
+            }
+          }
+        }
       }
 
       .activeTC {
