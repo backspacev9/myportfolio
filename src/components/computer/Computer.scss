@@ -52,17 +52,19 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    height: 100%;
     width: 100%;
     height: 100%;
-    padding: 15px 25px 25px 25px;
+    padding: $paddingTopGlass 25px;
     background-color: #051706;
     border-radius: 30px;
     box-shadow: 0px 0px 15px 20px rgba(34, 60, 80, 0.33) inset;
 
+    .disk-page {
+      height: calc(100% - $paddingTopGlass * 2);
+    }
+
     .control-header {
       display: flex;
-      padding: 2px 2px;
       align-items: center;
       justify-content: flex-end;
       width: 100%;
@@ -76,27 +78,15 @@
         position: relative;
         width: 22px;
         height: 22px;
-        background-color: #05441b;
+        // background-color: #05441b;
         cursor: pointer;
-        span {
-          display: none;
-          position: absolute;
-          background-color: #fff;
-          width: 2px;
-          height: 100%;
-        }
-        span:nth-child(1) {
-          transform: rotate(45deg);
-        }
-        span:nth-child(2) {
-          transform: rotate(-45deg);
+        img {
+          width: 60%;
+          height: 60%;
         }
       }
       .btn-minimize:hover {
-        background-color: #fff;
-        .stroke {
-          background-color: #04a862;
-        }
+        background-color: #00000075;
       }
     }
 
@@ -115,9 +105,6 @@
     height: 100vh;
     .m-glass {
       .control-header .btn-minimize {
-        .stroke {
-          display: flex;
-        }
       }
       .header {
         font-size: 30px;

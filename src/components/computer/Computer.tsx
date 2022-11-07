@@ -1,5 +1,6 @@
 import "./Computer.scss";
 import "../../";
+import {iconPath} from "../../constants";
 import Browser from "../browser/Browser";
 
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
@@ -9,7 +10,6 @@ const Computer = () => {
 
   const fullScreen = () => {
     setIsFullScreen(!isFullScreen);
-    console.log("click");
   };
 
   return (
@@ -19,8 +19,7 @@ const Computer = () => {
           <div className="m-glass">
             <header className="control-header">
               <span className="btn-minimize" onClick={() => fullScreen()}>
-                <span className="stroke"></span>
-                <span className="stroke"></span>
+                <img src={isFullScreen ? iconPath.fullscreenExit : iconPath.fullscreen} alt="" />
               </span>
             </header>
             <AboutDiskette isFullScreen={isFullScreen} />

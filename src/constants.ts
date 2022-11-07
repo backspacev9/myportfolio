@@ -8,3 +8,7 @@ export const cards = [
     image: "./img/diskette2.png",
   },
 ];
+export const iconPath = {
+  fullscreen: "./icons/fullscreen.png",
+  fullscreenExit: "./icons/fullscreen_exit.png",
+};

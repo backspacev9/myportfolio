@@ -98,7 +98,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
   };
 
   return (
-    <div className="About">
+    <div className="About disk-page">
       <aside>
         <nav>
           <li
@@ -142,7 +142,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
         </div>
         <div className="mainContainer">
           <div className={`tabContent tc-about ${activeTC.about}`}>
-            <span> Hello, I'm Kalendo Alexander</span>
+            <span> Hello, I'm Alexander Kalendo</span>
             <section>
               <span className="sectionName"> &#62;Profile</span>
               <p>
@@ -190,7 +190,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
                 <div className="exp-header">
                   <div className="dateAndPosition">
                     <div className="exp-date">03/2021 - 08/2021</div>
-                    <span> JavaScript/Front-End Courses</span>
+                    <span>Front-End Courses</span>
                   </div>
                   <span className="place">Rolling Scopes School</span>
                 </div>
@@ -199,7 +199,11 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             </section>
           </div>
           <div className={`tabContent tc-skills ${activeTC.skills}`}>
-            &#62; <p></p>
+            <li>&#62;Web Development</li>
+            <li>&#62;User Interface Design</li>
+            <li>&#62;Front-end Development</li>
+            <li>&#62;JavaScript, TypeScript, Html, css</li>
+            <li>&#62;React</li>
           </div>
           <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div>
           <div className={`tabContent tc-contacts ${activeTC.contacts}`}>&#62;44444444444</div>
