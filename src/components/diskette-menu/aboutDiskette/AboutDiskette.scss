@@ -16,7 +16,7 @@
   aside {
     align-items: flex-end;
     height: 100%;
-    width: 160px;
+    width: 180px;
     z-index: 100;
     nav {
       display: flex;
@@ -25,15 +25,15 @@
       width: 100%;
       li {
         display: flex;
-        height: 60px;
+        height: 100px;
         padding: 5px;
         border: 2px solid #077d0c;
         cursor: pointer;
       }
       .activeTab {
         border: 2px solid #ffffff;
-        border-left: 10px solid #ffffff;
-        border-right: 10px solid #ffffff;
+        border-left: 7px solid #ffffff;
+        border-right: 7px solid #ffffff;
       }
     }
   }
@@ -65,13 +65,12 @@
         display: none;
         flex-direction: column;
         height: 100%;
-        gap: 10px;
 
         section {
           display: flex;
           flex-direction: column;
           gap: 15px;
-          margin-top: 15px;
+          margin-top: 30px;
           .sectionName {
             background-color: #04ab63;
             padding: 0 5px;
@@ -81,8 +80,8 @@
         .experience {
           display: flex;
           flex-direction: column;
-          gap: 20px;
-
+          gap: 10px;
+          margin-top: 20px;
           .exp-header {
             display: flex;
             flex-direction: column;

@@ -41,11 +41,56 @@ section {
 
 .table {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   height: $tableHeight;
   width: 100%;
   background-color: #c19c67;
   z-index: 1;
+}
+.table-items {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  bottom: $centerTable;
+  margin-right: 50px;
+  gap: 20px;
+}
+.fullScreen {
+  top: 0;
+  bottom: unset;
+  margin: 0;
+
+  .computer {
+    .monitor {
+      width: 100vw;
+      height: 100vh;
+      .m-glass {
+        .About aside {
+          width: 220px;
+          font-size: 25px;
+          nav li {
+            height: 150px;
+          }
+        }
+        .header {
+          font-size: 30px;
+        }
+        main .mainContainer {
+          font-size: 40px;
+          line-height: 30px;
+
+          .experience .exp-date {
+            font-size: 28px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .comp-controls {
+    display: none;
+  }
 }
 
 footer {

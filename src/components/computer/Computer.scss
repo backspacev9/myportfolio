@@ -2,8 +2,6 @@
 
 .computer {
   display: flex;
-  position: absolute;
-  bottom: $centerTable;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -13,7 +11,7 @@
   letter-spacing: 2px;
   line-height: 20px;
   color: #fff;
-  z-index: 100;
+
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -29,8 +27,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 650px;
-    height: 550px;
+    width: 800px;
+    height: 600px;
     background-color: #dbcda6;
     border-radius: 30px;
     padding: 30px;
@@ -96,43 +94,14 @@
     }
   }
 }
-.fullScreen {
-  top: 0;
-  bottom: unset;
-  font-size: 25px;
-  .monitor {
-    width: 100vw;
-    height: 100vh;
-    .m-glass {
-      .control-header .btn-minimize {
-      }
-      .header {
-        font-size: 30px;
-      }
 
-      main .mainContainer {
-        font-size: 40px;
-        line-height: 30px;
-
-        .experience .exp-date {
-          font-size: 28px;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-
-  .comp-controls {
-    display: none;
-  }
-}
 //----------------------------
 .comp-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  width: 670px;
+  width: 800px;
   height: 200px;
   border-radius: 8px;
   background-color: #dbcda6;
