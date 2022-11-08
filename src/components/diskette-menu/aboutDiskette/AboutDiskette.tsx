@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import "./AboutDiskette.scss";
 const nameMenus = {
   about: "about me",
-  skills: "skills",
+  skills: "key skills",
   projects: "projects",
   contacts: "contacts",
 };
@@ -23,13 +23,14 @@ const AboutDiskette = (props: aboutDisketteProps) => {
   const headerRef = useRef<HTMLDivElement>(null);
   const tab1MenuRef = useRef<HTMLLIElement>(null);
   const tab2MenuRef = useRef<HTMLLIElement>(null);
-  const tab3MenuRef = useRef<HTMLLIElement>(null);
+  // const tab3MenuRef = useRef<HTMLLIElement>(null);
   const tab4MenuRef = useRef<HTMLLIElement>(null);
 
   const [activeTC, setActiveTC] = useState(defaultState);
   const [activeTab, setActiveTab] = useState(defaultState);
   const [activeTabConvas, setActiveTabConvas] = useState<HTMLLIElement>();
   const [header, setHeader] = useState("");
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   useEffect(() => {
     setActiveTabConvas(tab1MenuRef.current!);
@@ -39,8 +40,11 @@ const AboutDiskette = (props: aboutDisketteProps) => {
   }, []);
 
   useEffect(() => {
+    setIsFullScreen(props.isFullScreen);
+  }, [props.isFullScreen]);
+  useEffect(() => {
     drowMenuLine();
-  }, [activeTabConvas, props.isFullScreen]);
+  }, [activeTabConvas, isFullScreen]);
 
   const drowMenuLine = () => {
     const convEl = canvasRef.current;
@@ -81,13 +85,12 @@ const AboutDiskette = (props: aboutDisketteProps) => {
         setActiveTabConvas(tab2MenuRef.current!);
         setHeader(skills);
         break;
-      case projects:
-        setActiveTC({...defaultState, projects: "activeTC"});
-        setActiveTab({...defaultState, projects: "activeTab"});
-        setActiveTabConvas(tab3MenuRef.current!);
-        setHeader(projects);
-
-        break;
+      // case projects:
+      //   setActiveTC({...defaultState, projects: "activeTC"});
+      //   setActiveTab({...defaultState, projects: "activeTab"});
+      //   setActiveTabConvas(tab3MenuRef.current!);
+      //   setHeader(projects);
+      //   break;
       case contacts:
         setActiveTC({...defaultState, contacts: "activeTC"});
         setActiveTab({...defaultState, contacts: "activeTab"});
@@ -117,14 +120,14 @@ const AboutDiskette = (props: aboutDisketteProps) => {
           >
             {skills}
           </li>
-          <li
+          {/* <li
             tabIndex={3}
             ref={tab3MenuRef}
             className={activeTab.projects}
             onClick={() => handleSelectMenu(projects)}
           >
             {projects}
-          </li>
+          </li> */}
           <li
             tabIndex={4}
             ref={tab4MenuRef}

@@ -4,16 +4,24 @@ import {iconPath} from "../../constants";
 import Browser from "../browser/Browser";
 
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
-import {useState} from "react";
-const Computer = () => {
+import {useEffect, useState} from "react";
+
+interface ComputerProps {
+  isFullScreen: (isfull: boolean) => void;
+}
+
+const Computer = (props: ComputerProps) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const fullScreen = () => {
     setIsFullScreen(!isFullScreen);
   };
+  useEffect(() => {
+    props.isFullScreen(isFullScreen);
+  }, [isFullScreen]);
 
   return (
-    <div className={`computer ${isFullScreen ? "fullScreen" : ""}`}>
+    <div className={`computer`}>
       <div className="monitor">
         <div className="m-main">
           <div className="m-glass">
