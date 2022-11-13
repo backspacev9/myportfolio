@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import ProgressBar from "../../progressBar";
 import "./AboutDiskette.scss";
 const nameMenus = {
   about: "about me",
@@ -202,11 +203,14 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             </section>
           </div>
           <div className={`tabContent tc-skills ${activeTC.skills}`}>
-            <li>&#62;Web Development</li>
-            <li>&#62;User Interface Design</li>
-            <li>&#62;Front-end Development</li>
-            <li>&#62;JavaScript, TypeScript, Html, css</li>
-            <li>&#62;React</li>
+            <li>{<ProgressBar name="User Interface Design" percent={60} />}</li>
+            <li>{<ProgressBar name="Html" percent={90} />}</li>
+            <li>{<ProgressBar name="CSS/SASS" percent={90} />}</li>
+            <li>{<ProgressBar name="JavaScript" percent={70} />}</li>
+            <li>{<ProgressBar name="JavaScript" percent={70} />}</li>
+            <li>{<ProgressBar name="TypeScript" percent={70} />}</li>
+            <li>{<ProgressBar name="React" percent={70} />}</li>
+            <li>{<ProgressBar name="NodeJS" percent={20} />}</li>
           </div>
           <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div>
           <div className={`tabContent tc-contacts ${activeTC.contacts}`}>&#62;44444444444</div>

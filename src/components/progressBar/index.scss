@@ -1,0 +1,33 @@
+.ProgressBar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 5px;
+
+  .progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      display: flex;
+    }
+  }
+
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+    padding: 5px;
+    gap: 5px;
+    border: 2px solid;
+    height: 25px;
+
+    span {
+      display: flex;
+      width: 10px;
+      height: 15px;
+      background-color: rgb(255, 255, 255);
+    }
+  }
+}

@@ -23,7 +23,7 @@ li {
 .App,
 footer,
 section {
-  max-width: 1920px;
+  // max-width: 1920px;
 }
 
 .App {
@@ -60,6 +60,9 @@ section {
   bottom: unset;
   margin: 0;
 
+  .DisketteMenu {
+    display: none;
+  }
   .computer {
     .monitor {
       width: 100vw;
@@ -82,6 +85,11 @@ section {
           .experience .exp-date {
             font-size: 28px;
             white-space: nowrap;
+          }
+          .tc-skills {
+            li {
+              width: 60%;
+            }
           }
         }
       }
