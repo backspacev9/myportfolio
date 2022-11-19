@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import ProgressBar from "../../progressBar";
+import {Contacts} from "../../../constants";
 import "./AboutDiskette.scss";
 const nameMenus = {
   about: "about me",
@@ -212,8 +213,25 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             <li>{<ProgressBar name="React" percent={70} />}</li>
             <li>{<ProgressBar name="NodeJS" percent={20} />}</li>
           </div>
-          <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div>
-          <div className={`tabContent tc-contacts ${activeTC.contacts}`}>&#62;44444444444</div>
+          {/* <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div> */}
+          <div className={`tabContent tc-contacts ${activeTC.contacts}`}>
+            <li>
+              &#62;&nbsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://maps.google.com/maps?q=${Contacts.country}+${Contacts.city}`}
+              >
+                {Contacts.country}, {Contacts.city}
+              </a>
+            </li>
+            <li>
+              &#62;&nbsp;<a href={`tel:${Contacts.phone}`}>{Contacts.phone}</a>
+            </li>
+            <li>
+              &#62;&nbsp;<a href={`mailto:${Contacts.email}`}>{Contacts.email}</a>
+            </li>
+          </div>
         </div>
       </main>
     </div>
