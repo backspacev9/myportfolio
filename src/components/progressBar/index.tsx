@@ -9,6 +9,7 @@ const ProgressBar = (props: ProgressBar) => {
   const progressRef = useRef<HTMLDivElement>(null);
   const [spans, setSpans] = useState<Array<JSX.Element>>([]);
   const [currentWidth, setCurrentWidth] = useState(0);
+  const [windowResizing, setWindowResizing] = useState(false);
 
   const getWidth = () => {
     if (progressRef.current) {
@@ -31,6 +32,20 @@ const ProgressBar = (props: ProgressBar) => {
   useEffect(() => {
     getWidth();
   });
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(timeout);
+      setWindowResizing(true);
+      timeout = setTimeout(() => {
+        setWindowResizing(false);
+      }, 100);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     calculateSpans();

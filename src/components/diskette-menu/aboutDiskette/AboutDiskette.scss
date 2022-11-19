@@ -108,7 +108,13 @@
           }
         }
       }
-
+      .tc-contacts {
+        gap: 20px;
+        li a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
       .activeTC {
         display: flex;
       }
