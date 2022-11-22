@@ -195,11 +195,23 @@ const AboutDiskette = (props: aboutDisketteProps) => {
                 <div className="exp-header">
                   <div className="dateAndPosition">
                     <div className="exp-date">03/2021 - 08/2021</div>
-                    <span>Front-End Courses</span>
+                    <span>Front-End Courses / React</span>
                   </div>
                   <span className="place">Rolling Scopes School</span>
                 </div>
-                <p></p>
+                <p>Completed Front-End and React course</p>
+                <p className="certifications">
+                  Certifications: <br />
+                  &#62;&nbsp;
+                  <a href="https://app.rs.school/certificate/3cyh2imb">
+                    JAVASCRIPT/FRONT-END 2021Q1 (JAVASCRIPT)
+                  </a>
+                  <br />
+                  &#62;&nbsp;
+                  <a href="https://app.rs.school/certificate/241kga4n">
+                    REACT 2022 Q1 (JAVASCRIPT)
+                  </a>
+                </p>
               </div>
             </section>
           </div>
