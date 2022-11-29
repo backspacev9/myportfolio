@@ -4,21 +4,18 @@ import {iconPath} from "../../constants";
 import Browser from "../browser/Browser";
 
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
-import {useEffect, useState} from "react";
+import {useAppDispatch, useAppSelector} from "../../redux/rootReducer";
+import {setFullScreen} from "../../redux/reducers/computerSlice";
+import ProjectsDiskette from "../diskette-menu/projectsDiskette/ProjectsDiskette";
+import {Route, Routes} from "react-router-dom";
 
-interface ComputerProps {
-  isFullScreen: (isfull: boolean) => void;
-}
-
-const Computer = (props: ComputerProps) => {
-  const [isFullScreen, setIsFullScreen] = useState(false);
+const Computer = () => {
+  const {isFullScreen} = useAppSelector((state) => state.computerSlice);
+  const dispatch = useAppDispatch();
 
   const fullScreen = () => {
-    setIsFullScreen(!isFullScreen);
+    dispatch(setFullScreen(!isFullScreen));
   };
-  useEffect(() => {
-    props.isFullScreen(isFullScreen);
-  }, [isFullScreen]);
 
   return (
     <div className={`computer`}>
@@ -30,7 +27,12 @@ const Computer = (props: ComputerProps) => {
                 <img src={isFullScreen ? iconPath.fullscreenExit : iconPath.fullscreen} alt="" />
               </span>
             </header>
-            <AboutDiskette isFullScreen={isFullScreen} />
+            <Routes>
+              <Route path="/about" element={<AboutDiskette isFullScreen={isFullScreen} />} />
+              <Route path="/projects" element={<ProjectsDiskette />} />
+            </Routes>
+
+            {/* <AboutDiskette isFullScreen={isFullScreen} /> */}
           </div>
           {/* <Browser /> */}
         </div>

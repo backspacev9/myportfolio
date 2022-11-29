@@ -5,13 +5,11 @@ import "./AboutDiskette.scss";
 const nameMenus = {
   about: "about me",
   skills: "key skills",
-  projects: "projects",
   contacts: "contacts",
 };
 const defaultState = {
   about: "",
   skills: "",
-  projects: "",
   contacts: "",
 };
 
@@ -20,12 +18,11 @@ interface aboutDisketteProps {
 }
 
 const AboutDiskette = (props: aboutDisketteProps) => {
-  const {about, skills, projects, contacts} = nameMenus;
+  const {about, skills, contacts} = nameMenus;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const tab1MenuRef = useRef<HTMLLIElement>(null);
   const tab2MenuRef = useRef<HTMLLIElement>(null);
-  // const tab3MenuRef = useRef<HTMLLIElement>(null);
   const tab4MenuRef = useRef<HTMLLIElement>(null);
 
   const [activeTC, setActiveTC] = useState(defaultState);
@@ -87,12 +84,6 @@ const AboutDiskette = (props: aboutDisketteProps) => {
         setActiveTabConvas(tab2MenuRef.current!);
         setHeader(skills);
         break;
-      // case projects:
-      //   setActiveTC({...defaultState, projects: "activeTC"});
-      //   setActiveTab({...defaultState, projects: "activeTab"});
-      //   setActiveTabConvas(tab3MenuRef.current!);
-      //   setHeader(projects);
-      //   break;
       case contacts:
         setActiveTC({...defaultState, contacts: "activeTC"});
         setActiveTab({...defaultState, contacts: "activeTab"});
@@ -122,14 +113,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
           >
             {skills}
           </li>
-          {/* <li
-            tabIndex={3}
-            ref={tab3MenuRef}
-            className={activeTab.projects}
-            onClick={() => handleSelectMenu(projects)}
-          >
-            {projects}
-          </li> */}
+
           <li
             tabIndex={4}
             ref={tab4MenuRef}
@@ -200,8 +184,8 @@ const AboutDiskette = (props: aboutDisketteProps) => {
                   <span className="place">Rolling Scopes School</span>
                 </div>
                 <p>Completed Front-End and React course</p>
-                <p className="certifications">
-                  Certifications: <br />
+                <p className="certificates">
+                  Certificates: <br />
                   &#62;&nbsp;
                   <a href="https://app.rs.school/certificate/3cyh2imb">
                     JAVASCRIPT/FRONT-END 2021Q1 (JAVASCRIPT)
@@ -225,7 +209,7 @@ const AboutDiskette = (props: aboutDisketteProps) => {
             <li>{<ProgressBar name="React" percent={70} />}</li>
             <li>{<ProgressBar name="NodeJS" percent={20} />}</li>
           </div>
-          {/* <div className={`tabContent tc-projects ${activeTC.projects}`}>&#62;33333333333</div> */}
+
           <div className={`tabContent tc-contacts ${activeTC.contacts}`}>
             <li>
               &#62;&nbsp;

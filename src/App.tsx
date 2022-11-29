@@ -1,25 +1,24 @@
-import {useEffect, useState} from "react";
+import {BrowserRouter, Router} from "react-router-dom";
 import "./App.scss";
 import Computer from "./components/computer/Computer";
 import DisketteMenu from "./components/diskette-menu/DisketteMenu";
+import {useAppSelector} from "./redux/rootReducer";
 
 function App() {
-  const [isFullScreen, setIsFullScreen] = useState(false);
-
-  const fullScreenHandle = (isfull: boolean) => {
-    setIsFullScreen(isfull);
-  };
+  const {isFullScreen} = useAppSelector((state) => state.computerSlice);
 
   return (
-    <div className="App">
-      <div className="table">
-        <section className={`table-items ${isFullScreen ? "fullScreen" : ""}`}>
-          <DisketteMenu />
-          <Computer isFullScreen={fullScreenHandle} />
-        </section>
+    <BrowserRouter>
+      <div className="App">
+        <div className="table">
+          <section className={`table-items ${isFullScreen ? "fullScreen" : ""}`}>
+            <DisketteMenu />
+            <Computer />
+          </section>
+        </div>
+        <footer></footer>
       </div>
-      <footer></footer>
-    </div>
+    </BrowserRouter>
   );
 }
 

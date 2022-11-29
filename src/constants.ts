@@ -1,11 +1,17 @@
-export const cards = [
+import {Disk} from "./interfaces";
+
+export const disks: Array<Disk> = [
   {
+    id: 1,
     label: "about",
     image: "./img/diskette1.png",
+    rout: "/about",
   },
   {
+    id: 2,
     label: "projects",
     image: "./img/diskette2.png",
+    rout: "/projects",
   },
 ];
 export const iconPath = {
