@@ -1,5 +1,5 @@
 const ProjectsDiskette = () => {
-  return <div>PROJCETS</div>;
+  return <div className="Projects disk-page">PROJCETS</div>;
 };
 
 export default ProjectsDiskette;

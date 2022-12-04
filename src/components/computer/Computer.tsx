@@ -1,24 +1,26 @@
 import "./Computer.scss";
 import "../../";
 import {iconPath} from "../../constants";
-import Browser from "../browser/Browser";
-
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
 import {useAppDispatch, useAppSelector} from "../../redux/rootReducer";
-import {setFullScreen} from "../../redux/reducers/computerSlice";
+import {setFullScreen, setPower} from "../../redux/reducers/computerSlice";
 import ProjectsDiskette from "../diskette-menu/projectsDiskette/ProjectsDiskette";
 import {Route, Routes} from "react-router-dom";
 
 const Computer = () => {
-  const {isFullScreen} = useAppSelector((state) => state.computerSlice);
+  const {isFullScreen, isPowerOn} = useAppSelector((state) => state.computerSlice);
   const dispatch = useAppDispatch();
 
   const fullScreen = () => {
     dispatch(setFullScreen(!isFullScreen));
   };
 
+  const onOfComputer = () => {
+    dispatch(setPower(!isPowerOn));
+  };
+
   return (
-    <div className={`computer`}>
+    <div className={`computer ${isPowerOn ? "powerOn" : ""}`}>
       <div className="monitor">
         <div className="m-main">
           <div className="m-glass">
@@ -45,7 +47,7 @@ const Computer = () => {
             <span className="btn-pickoff"></span>
           </div>
         </div>
-        <span className="btn-onOff"></span>
+        <span className="btn-onOff" onClick={onOfComputer}></span>
       </div>
       {/* <img className="comp_foot" src="./img/monitor_foot.svg" alt="" /> */}
     </div>
