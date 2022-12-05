@@ -5,10 +5,11 @@ import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
 import {useAppDispatch, useAppSelector} from "../../redux/rootReducer";
 import {setFullScreen, setPower} from "../../redux/reducers/computerSlice";
 import ProjectsDiskette from "../diskette-menu/projectsDiskette/ProjectsDiskette";
-import {Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 
 const Computer = () => {
   const {isFullScreen, isPowerOn} = useAppSelector((state) => state.computerSlice);
+
   const dispatch = useAppDispatch();
 
   const fullScreen = () => {
@@ -44,7 +45,9 @@ const Computer = () => {
           <span className="disk-input"></span>
           <div className="disk-controls">
             <span className="disk-status"></span>
-            <span className="btn-pickoff"></span>
+            <Link to={"/"}>
+              <span className="btn-pickoff"></span>
+            </Link>
           </div>
         </div>
         <span className="btn-onOff" onClick={onOfComputer}></span>
