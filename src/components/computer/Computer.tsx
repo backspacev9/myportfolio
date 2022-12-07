@@ -3,12 +3,12 @@ import "../../";
 import {iconPath} from "../../constants";
 import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
 import {useAppDispatch, useAppSelector} from "../../redux/rootReducer";
-import {setFullScreen, setPower} from "../../redux/reducers/computerSlice";
+import {setDisk, setFullScreen, setPower} from "../../redux/reducers/computerSlice";
 import ProjectsDiskette from "../diskette-menu/projectsDiskette/ProjectsDiskette";
 import {Link, Route, Routes} from "react-router-dom";
 
 const Computer = () => {
-  const {isFullScreen, isPowerOn} = useAppSelector((state) => state.computerSlice);
+  const {isFullScreen, isPowerOn, currentDisk} = useAppSelector((state) => state.computerSlice);
 
   const dispatch = useAppDispatch();
 
@@ -25,28 +25,34 @@ const Computer = () => {
       <div className="monitor">
         <div className="m-main">
           <div className="m-glass">
-            <header className="control-header">
-              <span className="btn-minimize" onClick={() => fullScreen()}>
-                <img src={isFullScreen ? iconPath.fullscreenExit : iconPath.fullscreen} alt="" />
-              </span>
-            </header>
-            <Routes>
-              <Route path="/about" element={<AboutDiskette isFullScreen={isFullScreen} />} />
-              <Route path="/projects" element={<ProjectsDiskette />} />
-            </Routes>
-
-            {/* <AboutDiskette isFullScreen={isFullScreen} /> */}
+            <main className="m-content">
+              <header className="control-header">
+                {/* <span>{currentDisk?.label}</span> */}
+                <span className="btn-minimize" onClick={() => fullScreen()}>
+                  <img src={isFullScreen ? iconPath.fullscreenExit : iconPath.fullscreen} alt="" />
+                </span>
+              </header>
+              <div
+                className="diskette-NotFound"
+                style={currentDisk ? {display: "none"} : {display: "flex"}}
+              >
+                NO DISKETTE FOUND
+              </div>
+              <Routes>
+                <Route path="/about" element={<AboutDiskette isFullScreen={isFullScreen} />} />
+                <Route path="/projects" element={<ProjectsDiskette />} />
+              </Routes>
+            </main>
           </div>
-          {/* <Browser /> */}
         </div>
       </div>
       <div className="comp-controls">
         <div className="diskette-drive">
           <span className="disk-input"></span>
           <div className="disk-controls">
-            <span className="disk-status"></span>
+            <span className={`disk-status ${isPowerOn && currentDisk ? "blink" : ""}`}></span>
             <Link to={"/"}>
-              <span className="btn-pickoff"></span>
+              <span className="btn-pickoff" onClick={() => dispatch(setDisk(null))}></span>
             </Link>
           </div>
         </div>
