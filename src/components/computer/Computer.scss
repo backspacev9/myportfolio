@@ -1,13 +1,15 @@
 @import "../../varibles.style.scss";
+@import "../../animations.style.scss";
 
 .powerOn .monitor .m-main .m-glass {
   background-color: #051706;
-  .disk-page,
-  .control-header {
+  .m-content {
     display: flex;
   }
 }
-
+.diskette-NotFound {
+  margin: auto;
+}
 .computer {
   display: flex;
   flex-direction: column;
@@ -57,7 +59,7 @@
   .m-glass {
     display: flex;
     position: relative;
-    flex-direction: column;
+
     width: 100%;
     height: 100%;
     padding: $paddingTopGlass 25px;
@@ -66,12 +68,19 @@
     box-shadow: 0px 0px 15px 20px rgba(34, 60, 80, 0.33) inset;
 
     .disk-page {
-      display: none;
+      display: flex;
       height: calc(100% - $paddingTopGlass * 2);
     }
 
-    .control-header {
+    .m-content {
       display: none;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .control-header {
+      display: flex;
       align-items: center;
       justify-content: flex-end;
       width: 100%;
@@ -149,7 +158,7 @@
         display: flex;
         width: 20px;
         height: 6px;
-        background-color: #9a9a9a;
+        background-color: #dadada;
         box-shadow: 0px 0px 1px 1px rgb(0 0 0 / 51%);
       }
       .btn-pickoff {
@@ -161,4 +170,8 @@
       }
     }
   }
+}
+
+.blink {
+  animation: blinking 0.5s infinite;
 }
