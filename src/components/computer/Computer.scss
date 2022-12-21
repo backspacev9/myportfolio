@@ -7,9 +7,7 @@
     display: flex;
   }
 }
-.diskette-NotFound {
-  margin: auto;
-}
+
 .computer {
   display: flex;
   flex-direction: column;
@@ -65,7 +63,7 @@
     padding: $paddingTopGlass 25px;
     background-color: rgb(0, 0, 0);
     border-radius: 30px;
-    box-shadow: 0px 0px 15px 20px rgba(34, 60, 80, 0.33) inset;
+    box-shadow: 0px 0px 10px 10px rgb(0 0 0) inset;
 
     .disk-page {
       display: flex;

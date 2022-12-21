@@ -5,11 +5,13 @@ import AboutDiskette from "../diskette-menu/aboutDiskette/AboutDiskette";
 import {useAppDispatch, useAppSelector} from "../../redux/rootReducer";
 import {setDisk, setFullScreen, setPower} from "../../redux/reducers/computerSlice";
 import ProjectsDiskette from "../diskette-menu/projectsDiskette/ProjectsDiskette";
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, Route, Routes, useNavigate} from "react-router-dom";
+import NotFoundDiskette from "../diskette-menu/notFoundDiskette/notFoundDiskette";
+import {useEffect} from "react";
 
 const Computer = () => {
   const {isFullScreen, isPowerOn, currentDisk} = useAppSelector((state) => state.computerSlice);
-
+  const navigation = useNavigate();
   const dispatch = useAppDispatch();
 
   const fullScreen = () => {
@@ -19,6 +21,12 @@ const Computer = () => {
   const onOfComputer = () => {
     dispatch(setPower(!isPowerOn));
   };
+  useEffect(() => {
+    if (!currentDisk) {
+      navigation("/");
+    }
+    console.log(currentDisk);
+  }, []);
 
   return (
     <div className={`computer ${isPowerOn ? "powerOn" : ""}`}>
@@ -32,13 +40,9 @@ const Computer = () => {
                   <img src={isFullScreen ? iconPath.fullscreenExit : iconPath.fullscreen} alt="" />
                 </span>
               </header>
-              <div
-                className="diskette-NotFound"
-                style={currentDisk ? {display: "none"} : {display: "flex"}}
-              >
-                NO DISKETTE FOUND
-              </div>
+              {!currentDisk ? <NotFoundDiskette /> : ""}
               <Routes>
+                <Route path="/" element={<></>} />
                 <Route path="/about" element={<AboutDiskette isFullScreen={isFullScreen} />} />
                 <Route path="/projects" element={<ProjectsDiskette />} />
               </Routes>

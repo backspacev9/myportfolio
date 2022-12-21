@@ -1,0 +1,97 @@
+.Projects {
+  display: flex;
+  aside {
+    display: flex;
+    height: 100%;
+    min-width: fit-content;
+    nav {
+      margin-top: 50px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        span {
+          text-transform: uppercase;
+        }
+        li {
+          display: flex;
+          margin-left: 10px;
+          cursor: pointer;
+          padding: 10px;
+          text-transform: uppercase;
+          border: 2px solid #077d0c;
+        }
+      }
+      ul:nth-child(2) {
+        margin-top: 50px;
+      }
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0 0 20px;
+    gap: 15px;
+    .preview-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%;
+      img {
+        display: flex;
+        width: 100%;
+      }
+      // img:hover {
+      //   scale: 2.5;
+      //   translate: -50% 50%;
+      //   transition: all 0.4s;
+      // }
+    }
+
+    .description {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+
+      .tittle {
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .text {
+        display: flex;
+        overflow-y: auto;
+      }
+    }
+  }
+  .footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    hr {
+      height: 3px;
+      width: calc(100% - 100px - 5px);
+      background-color: #04a862;
+      border: none;
+    }
+    button {
+      display: flex;
+      width: fit-content;
+      width: 100px;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      background-color: #04a862;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #04a861cb;
+    }
+  }
+}
