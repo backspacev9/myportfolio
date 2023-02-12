@@ -1,4 +1,4 @@
-import {Disk} from "./interfaces";
+import {Disk, ProjectsItem} from "./interfaces";
 
 export const disks: Array<Disk> = [
   {
@@ -14,6 +14,54 @@ export const disks: Array<Disk> = [
     rout: "/projects",
   },
 ];
+
+export const projectsApps: Array<ProjectsItem> = [
+  {
+    tittle: "Match-match game",
+    text: "11",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "",
+  },
+  {
+    tittle: "English for kid",
+    text: "22",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "#",
+  },
+  {
+    tittle: "Virtual piano",
+    text: "33",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "#",
+  },
+  {
+    tittle: "Photo Filter",
+    text: "444",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "#",
+  },
+];
+export const projectsLanding: Array<ProjectsItem> = [
+  {
+    tittle: "Online Zoo",
+    text: "5",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "#",
+  },
+  {
+    tittle: "Wildlife",
+    text: "6666",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "#",
+  },
+  {
+    tittle: "Bank Card",
+    text: "6666",
+    imgUrl: "./img/preview/match-match.png",
+    sourceUrl: "https://backspacev9.github.io/BankCard/",
+  },
+];
+
 export const iconPath = {
   fullscreen: "./icons/fullscreen.png",
   fullscreenExit: "./icons/fullscreen_exit.png",

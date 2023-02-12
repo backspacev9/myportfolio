@@ -3,6 +3,7 @@ import {combineReducers} from "redux";
 import {store} from "..";
 
 import computerSlice from "./reducers/computerSlice";
+import projectsSlice from "./reducers/projectsSlice";
 
 export type RootReducerType = ReturnType<typeof rootReducer>;
 export type AppStore = typeof store;
@@ -13,4 +14,5 @@ export const useAppSelector: TypedUseSelectorHook<RootReducerType> = useSelector
 
 export const rootReducer = combineReducers({
   computerSlice,
+  projectsSlice,
 });
