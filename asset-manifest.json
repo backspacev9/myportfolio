@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/myportfolio/static/css/main.a950bd30.css",
-    "main.js": "/myportfolio/static/js/main.934a16f6.js",
-    "static/js/787.28cb0dcd.chunk.js": "/myportfolio/static/js/787.28cb0dcd.chunk.js",
-    "static/media/bg.svg": "/myportfolio/static/media/bg.349543dcb4196b9d0bd4.svg",
-    "static/media/LcdSolid-VPzB.ttf": "/myportfolio/static/media/LcdSolid-VPzB.e341360a4ba67a06e89c.ttf",
-    "static/media/Sevastopol-Interface.ttf": "/myportfolio/static/media/Sevastopol-Interface.086c63a7648b0ff67901.ttf",
-    "index.html": "/myportfolio/index.html",
-    "main.a950bd30.css.map": "/myportfolio/static/css/main.a950bd30.css.map",
-    "main.934a16f6.js.map": "/myportfolio/static/js/main.934a16f6.js.map",
-    "787.28cb0dcd.chunk.js.map": "/myportfolio/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/static/css/main.cdbea742.css",
+    "main.js": "/static/js/main.b0896dab.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/LcdSolid-VPzB.ttf": "/static/media/LcdSolid-VPzB.e341360a4ba67a06e89c.ttf",
+    "static/media/Sevastopol-Interface.ttf": "/static/media/Sevastopol-Interface.086c63a7648b0ff67901.ttf",
+    "index.html": "/index.html",
+    "main.cdbea742.css.map": "/static/css/main.cdbea742.css.map",
+    "main.b0896dab.js.map": "/static/js/main.b0896dab.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a950bd30.css",
-    "static/js/main.934a16f6.js"
+    "static/css/main.cdbea742.css",
+    "static/js/main.b0896dab.js"
   ]
 }
